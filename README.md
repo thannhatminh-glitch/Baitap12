@@ -31,21 +31,21 @@ Cấu trúc này được dùng để chứa **tần số** và **độ rộng x
 |-----------------------|
 | - Chu kỳ 5s           |
 | - Gửi cấu trúc chứa   |
-|   frequency, duty      |
-|   qua Queue            |
+|   frequency, duty     |
+|   qua Queue           |
 +-----------+-----------+
             |
             v
-+-----------------------+
-|    TASK_LED_CONTROL   |
-|-----------------------|
-| - Nhận cấu trúc từ    |
++------------------------+
+|    TASK_LED_CONTROL    |
+|------------------------|
+| - Nhận cấu trúc từ     |
 |   Queue (xQueueReceive)|
 | - Tính toán thời gian  |
 |   T_on và T_off        |
 | - Bật/Tắt LED tương    |
 |   ứng với duty cycle   |
-+-----------------------+
++------------------------+
 ```
 
 ---
@@ -139,8 +139,3 @@ và **mức cao (1)** → **LED tắt**.
 ✅ Đảm bảo tính thời gian thực: sử dụng **tick** của FreeRTOS thay vì delay blocking.
 ✅ Độc lập phần cứng: chỉ phụ thuộc vào FreeRTOS và GPIO.
 
----
-
-
-Bạn có muốn mình **chuyển file này thành định dạng `.md` hoặc `.docx`** (ví dụ để nộp kèm báo cáo)?
-Mình có thể xuất ra ngay cho bạn.
